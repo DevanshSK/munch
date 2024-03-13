@@ -1,39 +1,15 @@
-import { Image, StyleSheet } from 'react-native';
-import { Text, View } from '@/src/components/Themed';
+import { View } from '@components/Themed';
 
-import EditScreenInfo from '@/src/components/EditScreenInfo';
-import Colors from '@/src/constants/Colors';
-import products from '@/assets/data/products';
+import products from '@assets/data/products';
+import ProductListItem from '@components/ProductListItem';
+import { ScrollView } from 'react-native';
 
-const product = products[1];
 
-export default function TabOneScreen() {
+export default function MenuScreen() {
   return (
-    <View style={styles.container}>
-      <Image source={{uri: product.image}} style={styles.image} />
-      <Text style={styles.title}>{product.name}</Text>
-      <Text style={styles.price}>${product.price}</Text>
-    </View>
+    <ScrollView >
+      <ProductListItem product={products[0]} />
+      <ProductListItem product={products[1]} />
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "white",
-    padding: 10,
-    borderRadius: 10,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginVertical: 10
-  },
-  image: {
-    width: "100%",
-    aspectRatio: 1
-  },
-  price: {
-    color: Colors.light.tint,
-    fontWeight: 'bold'
-  },
-});
