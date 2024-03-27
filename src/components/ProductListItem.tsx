@@ -2,7 +2,7 @@ import { Image, StyleSheet } from "react-native"
 import Colors from "@/constants/Colors";
 import { Text, View } from "./Themed";
 
-import { Product } from "@assets/types";
+import { Product } from "@/types";
 type ProductListItemProps = {
     product: Product
 }
@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         padding: 10,
         borderRadius: 10,
+        flex: 1
     },
     title: {
         fontSize: 20,
