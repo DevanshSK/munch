@@ -8,6 +8,8 @@ type ProductListItemProps = {
     product: Product
 }
 
+export const defaultPizzaImage = 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png';
+
 const ProductListItem = ({ product }: ProductListItemProps) => {
     return (
         <Link href={`/menu/${product.id}`} asChild>
@@ -15,7 +17,7 @@ const ProductListItem = ({ product }: ProductListItemProps) => {
                 style={styles.container}
             >
                 <Image
-                    source={{ uri: product.image || 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png' }}
+                    source={{ uri: product.image || defaultPizzaImage }}
                     style={styles.image}
                 />
                 <Text style={styles.title}>
@@ -40,7 +42,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         marginVertical: 10,
-        fontFamily: "SpaceMono"
+        fontFamily: "Space-Mono"
     },
     image: {
         width: "100%",
@@ -48,7 +50,8 @@ const styles = StyleSheet.create({
     },
     price: {
         color: Colors.light.tint,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontFamily: "Space-Mono"
     },
 });
 
